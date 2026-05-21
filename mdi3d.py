@@ -9,6 +9,8 @@ def generate(name):
 def main():
     import os
     import random
+    os.makedirs("svg_with_base", exist_ok=True)
+    os.makedirs("stl", exist_ok=True)
     icons = os.listdir("mdi_svg")
 
     # t = icons[3420]
@@ -18,14 +20,14 @@ def main():
     # generate(name)
     # exit(0)
 
-    targets = random.sample(icons, 10)
+    targets = random.sample(icons, 1)
     # targets = ['truck-remove-outline.svg', 'hamburger-plus.svg', 'diving-flippers.svg', 'view-compact.svg', 'parking.svg']
     for t in targets: #all .svg
         name = t[:-4]
         print(name)
         generate(name)
-        os.remove(f"./svg_with_base/{name}.svg")
-        os.remove(f"./svg_with_base/{name}_base.svg")
+        # os.remove(f"./svg_with_base/{name}.svg")
+        # os.remove(f"./svg_with_base/{name}_base.svg")
         
     print(targets)
 
